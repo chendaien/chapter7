@@ -41,10 +41,10 @@ public class DispatcherServlet extends HttpServlet {
         ServletContext servletContext = servletConfig.getServletContext();
         //获取注册JSP的Servlet
         ServletRegistration jspServletRegistration = servletContext.getServletRegistration("jsp");
-        jspServletRegistration.addMapping(ConfigConstant.APP_JSP_PATH.getStatusMsg()+"*");
+        jspServletRegistration.addMapping(ConfigHelper.getAppJspPath()+"*");
         //注册静态资源的默认servlet
         ServletRegistration defaultServletRegistration = servletContext.getServletRegistration("default");
-        defaultServletRegistration.addMapping(ConfigConstant.APP_ASSET_PATH+"*");
+        defaultServletRegistration.addMapping(ConfigHelper.getAppAssetPath()+"*");
     }
 
     @Override

@@ -33,11 +33,11 @@ public final class DatabaseHelper {
     private static final String PASSWORD;
 
     static {
-        Properties properties = PropsUtil.loadProps("config.properties");
-        DRIVER = properties.getProperty("jdbc.driver");
-        URL = properties.getProperty("jdbc.url");
-        USERNAME = properties.getProperty("jdbc.username");
-        PASSWORD = properties.getProperty("jdbc.password");
+        Properties properties = PropsUtil.loadProps("smart.properties");
+        DRIVER = properties.getProperty("smart.framework.jdbc.driver");
+        URL = properties.getProperty("smart.framework.jdbc.url");
+        USERNAME = properties.getProperty("smart.framework.jdbc.username");
+        PASSWORD = properties.getProperty("smart.framework.jdbc.password");
         DATA_SOURCE = new BasicDataSource();
         DATA_SOURCE.setDriverClassName(DRIVER);
         DATA_SOURCE.setUrl(URL);
